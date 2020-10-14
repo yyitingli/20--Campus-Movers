@@ -1,1 +1,113 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> Join|Campus Mover </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script language="javascript">
+            $(document).ready(function(){
+                $("h2").fadeOut();
+                $("p").fadeOut();
+                $("p").fadeIn(3000);
+                $("h2").fadeIn(1000);
+            });
+        </script>
+        <link rel="stylesheet" href="style.css">
+         <style type = "text/css">
+            h1{
+                margin-left: 8%;
+            }
+            h2{
+                margin-top: 15%;
+                margin-left: -2%;
+            }
+            p{
+                margin-left: 5%;
+            }
+            form{
+                margin-top: 3%;
+                margin-left: 10%;
+            }
+            img{
+                width:50%;
+                height: auto;
+
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <header >
+            <div class = 'logo' >
+                <a href="homepage.html"><picture>
+                <source media="(min-width:700px)" srcset="ALM.png">
+                <img src="ALM.png" alt="logo" height="200" style="width:auto;" class = "logo">
+            
+                </picture></a>
+
+            </div>
+            <div class = "navbar">
+                <ul> 
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">services</a></li>
+                    <li> <a href="Review.html">Review</a></li>
+                    <li> <a href="Team.html">Our Team</a></li>
+                    <li> <a href="contact.html">Contact</a></li>
+                    <li><a style="color:#ab5255;" href="Join.html">Join US</a></li>
+
+                </ul>
+            </div>
+        </header>
+
+        <div class = 'float-container'>
+            <div class = 'float-child'  >
+                <h1> Join Our Team </h1>
+                <form>
+
+                        <label for="fname">First name:</label><br/>
+                        <input type="text" id="fname" name="fname" style="width: 80%;"><br/>
+                        <label for="lname">Last name:</label><br/>
+                        <input type="text" id="lname" name="lname" style="width: 80%;"><br/>
+                        <label for="email">Email:</label><br/>
+                        <input type="text" id="email" name="email" style="width: 80%;"><br/>
+                        <label for="Age">Age (minimun age is 16):</label><br/>
+                        <input type="number" id = 'age' name="age"  min="16" style="width: 80%;"><br/><br/>
+                        <label for="Resume">Upload Resume:</label>
+                        <input type="file" id="Resume" name="filename"style="width: 80%;"><br/><br/>
+                        
+
+                        <input type="submit" value="Submit" style="width: 80%;"><br>
+                </form>
+  
+            </div>
+            <div class = 'float-child' id = 'div1'>
+                <h2 style="color:#df9f9f;" > "The future depends on what you do today."  -- Mahatma Gandhi</h2>
+                <p style="color:#df9f9f;" > Start Your Career with Campus Mover </p>
+                <center>
+                    <picture>
+                    <source media="(min-width:700px)" srcset="image/join_us.JPG">
+                    <img src="image/join_us.JPG" alt="image" height="200" >
+                
+                    </picture>
+                </center>
+                
+            </div>
+
+        </div>
+
+        
+
+        
+
+
+
+        <footer>
+            <a href="index.html">Homepage &#8618 </a>
+        </footer>
+
+    </body>
+</html>
