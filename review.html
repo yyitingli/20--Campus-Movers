@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title> Review|Campus Mover </title>
+        <title> Review|Campus Movers </title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script language="javascript">
@@ -11,17 +10,18 @@
                 $('h1').fadeOut();
                 $("h1").fadeIn(1000);
             });
+
         </script>
          <style type = "text/css">
             p,h1{
-                margin-left: 20px;
+                margin-left: 30px;
             }
             h2{
-                margin-left: 20px;
+                margin-left: 30px;
                 font-size: 28px;
             }
-            img{
-                width:50%;
+            center img{
+                width: 80%;
                 height: auto;
 
             }
@@ -30,26 +30,91 @@
     </head>
 
     <body>
+        
         <script language="javascript">
             var images = ["image/review_1.JPG","image/review_2.JPG","image/review_3.JPG","image/review_4.JPG"];
+            var reviews= [`<p> Campus movers is very professional. The movers arrived on time. They were efficient. </p>
+                    <p> --Andrea Kim</p><hr/>`,`<p> The movers are wonderful. They stacked everything orderly in our storage unit. </p><p> --Panda</p><hr/>`,``]
+            var count = 0
+
+            function nextCount(){
+                if(count == images.length - 1){
+                    return 0;
+                }
+                return count +1;
+            }
+
+            function previousCount(){
+                if(count == 0){
+                    return images.length - 1;
+                }
+                return count -1;
+            }
+
+            function NextImage(){
+                count = nextCount()
+                var content = `<center> 
+                            <picture>
+                                <source media="(min-width:700px)" srcset="`+images[count]+ `">
+                                <img src="`+ images[count] +`" alt="image" height="200" >
+                            </picture>
+                            </center>`
+                document.getElementById("pictures").innerHTML = content;
+
+            }
+
+            function PreviousImage(){
+                count = previousCount()
+                var content = `<center> 
+                            <picture>
+                                <source media="(min-width:700px)" srcset="`+images[count]+ `">
+                                <img src="`+ images[count] +`" alt="image" height="200" >
+                            </picture>
+                            </center>`
+                document.getElementById("pictures").innerHTML = content;
+
+            }
+
+            function newReview(){
+
+                var review = "<p>"+ document.getElementById("review").value  +"</p>"+"<p>--"+ document.getElementById("Name").value+"</p><hr/>"
+
+                reviews.unshift(review);
+                reviews.pop();
+                writeReview()
+                
+                
+
+            }
+
+            function writeReview(){
+                document.getElementById("reviews").innerHTML = '';
+
+                for(n = 0; n < reviews.length; n ++){
+                    document.getElementById('reviews').innerHTML += reviews[n];
+                }
+                
+                
+            }
+
+
         </script>
-        
         <header >
             <div class = 'logo' >
                 <a href="homepage.html"><picture>
-                <source media="(min-width:700px)" srcset="ALM.png">
-                <img src="ALM.png" alt="logo" height="200" style="width:auto;" class = "logo">
+                <source media="(min-width:700px)" srcset="image/logo.png">
+                <img src="image/logo.png" alt="logo" height="200" style="width:auto;" class = "logo">
             
                 </picture></a>
 
             </div>
             <div class = "navbar">
                 <ul> 
-                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="homepage.html">Homepage</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="service.html">services</a></li>
                     <li> <a href="review.html">Review</a></li>
-                    <li> <a href="Team.html">Our Team</a></li>
+                    <li> <a href="team.html">Our Team</a></li>
                     <li> <a href="contact.html">Contact</a></li>
                     <li><a style="color:#bf4040;" href="join.html">Join US</a></li>
 
@@ -58,26 +123,59 @@
 
         </header>
 
-        <h1>Customer Reviews</h1>
-        <div class = "float-container">
+        <h1 style="color:#df9f9f;">Customer Reviews</h1>
+        <div class = "float-container" style= "margin-top :-3%">
             
-            <div class = "gallery float-child">
-                <h2 style="color:#df9f9f;" >Customer images</h2>
+            <div class = "float-child">
+                <h2  >Customer images:</h2>
+                <div id= "pictures">
+                    <center>
+                        <picture>
+                            <source media="(min-width:700px)" srcset="image/review_1.JPG">
+                            <img src="image/review_1.JPG" alt="image" height="200" >
+                
+                        </picture>
+                    </center>
+                </div>
+                <button type="button " style="margin-left: 10%" onclick="NextImage() ">Next Image</button>
+                <button type="button" onclick="PreviousImage()" >Previous Image</button>
                 
             </div>
 
             
-            <div class = "reviews float-child">
-                <h2 style="color:#df9f9f;" >Top Reviews from the United State: </h2>
+            <div class = "float-child">
+                <h2 > Recent Reviews from the United State: </h2>
+
+                <div id ='reviews'>
+                    <p> Campus movers is very professional. The movers arrived on time. They were efficient. </p>
+                    <p> --Andrea Kim</p><hr/>
+                    <p> The movers are wonderful. They stacked everything orderly in our storage unit. </p>
+                    <p> --Panda</p><hr/>
+                    <p> The price was the best I found in the city. </p>
+                    <p> --Fox </p><hr/>
+
+
+                    
+                </div>
+                <form style="font-size:20px">
+                    <label for="review">Write your review:</label><br/>
+                    <input style= 'height: 100px; width:90%;' type="text" id="review" name="review" required><br/>
+                    <label  for="Name">Name:</label><br/>
+                    <input type="text" id="Name" name="Name" value="Anonymous"required><br/>
+                    <input type="button"  class= 'submit' value="Submit" onclick="newReview()"><br>
+                </form> 
                 
             </div>
+            
         </div>
+
+
         
 
 
 
         <footer>
-            <a href="index.html">Homepage &#8618 </a>
+            <button type="button" style="text-align: right; width: 10%; margin-right: 3%; "><a href="homepage.html">Homepage &#8618 </a></button>
         </footer>
 
     </body>
