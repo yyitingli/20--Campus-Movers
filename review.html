@@ -5,13 +5,6 @@
         <title> Review|Campus Movers </title>
         <link rel="stylesheet" href="style.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script language="javascript">
-            $(document).ready(function () {
-                $('h1').fadeOut();
-                $("h1").fadeIn(1000);
-            });
-
          <style type = "text/css">
             p,h1{
                 margin-left: 30px;
@@ -78,14 +71,12 @@
             function newReview(){
 
                 var review = "<p>"+ document.getElementById("review").value  +"</p>"+"<p>--"+ document.getElementById("Name").value+"</p><hr/>"
-
                 if(validateForm()){
                     reviews.unshift(review);
                     reviews.pop();
                     writeReview()
                 }
                 
-
                 
                 
 
@@ -100,7 +91,6 @@
                 
                 
             }
-
 
             function validateForm() {
                 var x = document.forms["myForm"]["Name"].value;
@@ -119,7 +109,6 @@
                 }
                 return true
             }
-
 
 
         </script>
@@ -181,12 +170,11 @@
 
                     
                 </div>
-
-                <form style="font-size:20px">
+                <form  name='myForm'style="font-size:20px">
                     <label for="review">Write your review:</label><br/>
-                    <input style= 'height: 100px; width:90%;' type="text" id="review" name="review" required><br/>
+                    <input style= 'height: 100px; width:90%;' type="text" id="review" name="review"><br/>
                     <label  for="Name">Name:</label><br/>
-                    <input type="text" id="Name" name="Name" value="Anonymous"required><br/>
+                    <input type="text" id="Name" name="Name" value="Anonymous"><br/>
                     <input type="button"  class= 'submit' value="Submit" onclick="newReview()"><br>
                 </form> 
                 
