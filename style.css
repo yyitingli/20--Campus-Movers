@@ -3,6 +3,8 @@
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Open Sans', Sans Serif;
 	font-weight: 600;
+	text-align: center;
+	color: #3a444f;
 }
 
 
@@ -25,6 +27,7 @@ header{
 
 header .navbar { 
 	margin: 0;
+	padding: 10px;
 	border-radius: 0;
 	box-shadow: 0 1px 15px rgba(0,0,0,0.2);
   text-align: center;
@@ -32,12 +35,11 @@ header .navbar {
 }
 
 header .logo {
-  position: relative;
-  display: block;
-  width: 200px;
-  padding: 0 0 0 0;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    padding: 0 0 0 0;
+    margin-left: auto;
+    margin-right: auto;
+	background-color: #3a444f;
 }
 
 header .navbar ul {
@@ -64,7 +66,6 @@ header .navbar  ul li  :hover  {
     display:block; 
     width:60; 
     visibility:visible;
-    border: 1px solid #333; 
     color: #fff ;
     background-color: #333;
 }
@@ -159,11 +160,118 @@ button{
   box-sizing: border-box;
   font-size: 18px;
 }
-@media screen and (max-width: 1001px) {
-    header .logo {
-        width: 100px
-    }
+
+
+
+.bluebar {
+	padding-top: 20px;
+	padding-bottom: 40px;
+    width: 100%;
+    background-color: #3a444f;
 }
 
+.centerpicB {
+  display: block;
+  text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	border: 30px solid #3a444f;
+}
 
+.centertextB {
+  display: block;
+  text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	color: white;
+	padding: 10px;
+	border: solid white 2px;
+}
 
+.centertextB :hover {
+	color: #e0ae77;
+}
+
+.whitebar {
+	padding-top: 20px;
+	padding-bottom: 40px;
+    width: 100%;
+    background-color: white;
+}
+
+.centerpicW {
+  display: block;
+  text-align: center;
+	margin: auto;
+	width: 75%;
+	border: 30px solid white;
+}
+
+.centertextW {
+  display: block;
+  text-align: center;
+	margin:auto;
+	width: 600px;
+	color: #3a444f;
+	padding: 10px;
+	border: 2px solid #3a444f;
+}
+
+.centertextW :hover {
+	color: #e0ae77;
+}
+
+@media screen and (max-width:700px) {
+	.centertextW {
+		width: 350px;
+	}
+}
+
+@media screen and (max-width:700px) {
+	.centertextB {
+		width: 350px;
+	}
+}
+
+.footer {
+   width: 100%;
+   background-color: #3a444f;
+   color: white;
+   text-align: center;
+	margin: auto;
+}
+
+.footer p{
+	font-size: 18px;
+	color: white;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #3a444f;
+  font-size: 14px;
+}
+
+.footer ul li
+{
+    list-style-type: none;
+    display: inline;
+}
+
+.footer li a
+{
+	text-decoration: none;
+	color: white;
+}
+
+.footer li a:hover:not(.active) {
+  color: #e0ae77;
+}
+
+.footer li:not(:first-child):before {
+    content: "  |  ";
+}
