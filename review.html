@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title> Review|Campus Movers </title>
         <link rel="stylesheet" href="style.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script language="javascript">
             $(document).ready(function () {
@@ -11,7 +12,6 @@
                 $("h1").fadeIn(1000);
             });
 
-        </script>
          <style type = "text/css">
             p,h1{
                 margin-left: 30px;
@@ -79,9 +79,13 @@
 
                 var review = "<p>"+ document.getElementById("review").value  +"</p>"+"<p>--"+ document.getElementById("Name").value+"</p><hr/>"
 
-                reviews.unshift(review);
-                reviews.pop();
-                writeReview()
+                if(validateForm()){
+                    reviews.unshift(review);
+                    reviews.pop();
+                    writeReview()
+                }
+                
+
                 
                 
 
@@ -96,6 +100,26 @@
                 
                 
             }
+
+
+            function validateForm() {
+                var x = document.forms["myForm"]["Name"].value;
+                var y = document.forms["myForm"]["review"].value;
+                if (x == "" & y == "") {
+                    alert("Name and Review must be filled out");
+                    return false;
+                }
+                else if(x == ""){
+                    alert("Name must be filled out");
+                    return false;
+                }
+                else if(y == ""){
+                    alert("Review must be filled out");
+                    return false;
+                }
+                return true
+            }
+
 
 
         </script>
@@ -157,6 +181,7 @@
 
                     
                 </div>
+
                 <form style="font-size:20px">
                     <label for="review">Write your review:</label><br/>
                     <input style= 'height: 100px; width:90%;' type="text" id="review" name="review" required><br/>
