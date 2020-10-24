@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> Services|Campus Mover </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+          $( function() {
+                var today = new Date();
+                var dd = String(today.getDate() + 7).padStart(2, '0');
+                var mm = String(today.getMonth()).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+            $( "#datepicker" ).datepicker({
+                minDate: new Date(yyyy, mm, dd)
+            });
+          } );
+        </script> 
+        <script language="javascript">
+            $(document).ready(function(){
+                $("h2").fadeOut();
+                $("p").fadeOut();
+                $("p").fadeIn(3000);
+                $("h2").fadeIn(1000);
+        </script>
+        <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css">
+         <style type = "text/css">
+            h1{
+                margin-left: 8%;
+            }
+            h2{
+                margin-left: -5%;
+                margin-right: 5%
+                font-size:20px;
+            }
+            p{
+                text-align: left;
+                font-size: 28px;
+            }
+            form{
+                margin-top: 3%;
+                margin-left: 10%;
+            }
+            center img{
+                width:50%;
+                height: auto;
 
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <header >
+            <div class = 'logo' >
+                <a href="homepage.html"><picture>
+                <source media="(min-width:700px)" srcset="image/logo.png">
+                <img src="image/logo.png" alt="logo" height="200" style="width:auto;" class = "logo">
+            
+                </picture></a>
+
+            </div>
+            <div class = "navbar">
+                <ul> 
+                    <li><a href="homepage.html">Homepage</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">services</a></li>
+                    <li> <a href="review.html">Review</a></li>
+                    <li> <a href="team.html">Our Team</a></li>
+                    <li> <a href="contact.html">Contact</a></li>
+                    <li><a style="color:#ab5255;" href="join.html">Join US</a></li>
+
+                </ul>
+            </div>
+        </header>
+        <div class = 'float-container'>
+            <div class = 'float-child'  >
+                <h1 style="color:#df9f9f;"> How To Schedule Services </h1>
+                <p style=" margin-left: 8%;"> 
+                    Fill out the form below, with a week in advance notice! <br/> 
+                    We will email you back our availability <br/> 
+                    around that date and cost estimates!
+                </p>
+                <h1 style="color:#df9f9f;"> Schedule Services </h1>
+                <form id = "services" action="#" method= 'post'>
+
+                        <label for="fname">First name:</label><br/>
+                        <input type="text" id="fname" name="fname" required style="width: 80%;"><br/>
+                        <label for="lname">Last name:</label><br/>
+                        <input type="text" id="lname" name="lname" required style="width: 80%;"><br/>
+                        <label for="email">Email:</label><br/>
+                        <input type="text" id="email" name="email" required style="width: 80%;"><br/>
+                        <label for="Address">Address Moving From:</label><br/>
+                        <input type="text" id = 'address' name="address" required style="width: 80%;"><br/>
+                        <label for="Address">Address Moving To:</label><br/>
+                        <input type="text" id = 'address' name="address" required style="width: 80%;"><br/>
+                        <label for="datepicker">Pick A Moving Date:</label><br/>
+                        <input type="text" required id="datepicker"><br/><br/>
+
+                        
+
+                        <input type="submit" value="Submit" style="width: 80%;font-size: 20px"><br>
+                </form>
+  
+            </div>
+            <div class = 'float-child' id = 'div1'>
+                <h2 style="color:#bf5858; margin-top: 30%;" > "Excellent service, cheap, and speedy move in!"</h2>
+                <h2 style="color:#bf5858; text-align: right; margin-right: 10%;" > -- Real Satisfied Customer</h2>
+                
+                <center>
+                    <picture>
+                    <source media="(min-width:700px)" srcset="image/review_1.JPG">
+                    <img src="image/review_1.JPG" alt="image" height="200" >
+                
+                    </picture>
+                </center>
+
+                
+            </div>
+
+        </div>
+
+
+
+        <footer>
+            <button type="button" style="text-align: right; width: 10%; margin-right: 3%; "><a href="homepage.html">Homepage &#8618 </a></button>
+        </footer>
+
+    </body>
+</html>
